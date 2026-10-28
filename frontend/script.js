@@ -2,8 +2,7 @@ const docInput = document.getElementById('docInput');
 const simplifyBtn = document.getElementById('simplifyBtn');
 const resultBox = document.getElementById('resultBox');
 const loading = document.getElementById('loading');
-
-const BACKEND_URL = 'http://localhost:3000/api/simplify';
+const BACKEND_URL = 'https://project-1-13-xxxxx.onrender.com/api/simplify';
 
 simplifyBtn.addEventListener('click', async () => {
     const text = docInput.value.trim();
