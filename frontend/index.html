@@ -4,19 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doc Decoder</title>
+    <meta name="theme-color" content="#f6f7fb">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Doc Decoder</h1>
-        <p>Paste confusing technical documentation below to get a 5th-grade explanation and a real-world analogy.</p>
-        
-        <textarea id="docInput" placeholder="Paste documentation here..."></textarea>
-        <button id="simplifyBtn">Simplify It</button>
-        
-        <div id="loading" class="hidden">Decoding... please wait.</div>
-        <div id="resultBox" class="hidden"></div>
-    </div>
+    <main class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="Doc Decoder home">
+                <span class="brand-mark" aria-hidden="true">D</span>
+                <span>doc<span class="brand-light">decoder</span></span>
+            </a>
+            <span class="topbar-note">Made for curious builders</span>
+        </header>
+
+        <section class="hero" aria-labelledby="page-title">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> LESS DECODING. MORE BUILDING.</p>
+            <h1 id="page-title">Docs that make<br><span>sense to you.</span></h1>
+            <p class="hero-copy">Paste the part that lost you. Get a clear explanation and an everyday analogy, without the jargon.</p>
+        </section>
+
+        <section class="decoder-card" aria-label="Documentation simplifier">
+            <label for="docInput">THE DOCUMENTATION</label>
+            <textarea id="docInput" maxlength="12000" placeholder="Paste a confusing paragraph from your docs here..." aria-describedby="inputHint characterCount"></textarea>
+            <div class="input-footer">
+                <span id="inputHint">Keep it under 12,000 characters for the clearest explanation.</span>
+                <span id="characterCount" aria-live="polite">0 / 12,000</span>
+            </div>
+            <button id="simplifyBtn" type="button">
+                <span>Simplify this</span>
+                <span aria-hidden="true">→</span>
+            </button>
+            <p id="errorMessage" class="error-message hidden" role="alert"></p>
+            <p id="loading" class="loading-message hidden" role="status">Untangling the jargon…</p>
+            <section id="resultSection" class="result-section hidden" aria-live="polite" aria-labelledby="resultHeading">
+                <div class="result-heading">
+                    <span class="result-icon" aria-hidden="true">✦</span>
+                    <h2 id="resultHeading">Here’s the simple version</h2>
+                </div>
+                <div id="resultBox" class="result-copy"></div>
+            </section>
+        </section>
+        <footer class="page-footer">Clear ideas help you get back to building.</footer>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
